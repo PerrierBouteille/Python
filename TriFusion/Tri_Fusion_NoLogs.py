@@ -24,7 +24,6 @@ def tri_fusion(L):
     n = len(L)
     if(n<=1):
         return L
-    mg,md = L[0:len(L)//2],L[len(L)//2:]
-    L1 = tri_fusion(mg)
-    L2 = tri_fusion(md)
+    L1 = tri_fusion(L[0:len(L)//2])
+    L2 = tri_fusion(L[len(L)//2:])
     return fusion(L1,L2)
