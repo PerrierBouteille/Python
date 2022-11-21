@@ -20,19 +20,11 @@ def fusion(L1,L2):
         i += 1
     return L
 
-def mtg(L):
-    x = len(L)//2
-    return L[0:x]
-
-def mtd(L):
-    x = len(L)//2
-    return L[x:]
-
 def tri_fusion(L):
     n = len(L)
     if(n<=1):
         return L
-    mg,md = mtg(L),mtd(L)
+    mg,md = L[0:len(L)//2],L[len(L)//2:]
     L1 = tri_fusion(mg)
     L2 = tri_fusion(md)
     return fusion(L1,L2)
