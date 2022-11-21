@@ -21,8 +21,7 @@ def fusion(L1,L2):
     return L
 
 def tri_fusion(L):
-    n = len(L)
-    if(n<=1):
+    if(len(L)<=1):
         return L
     L1 = tri_fusion(L[0:len(L)//2])
     L2 = tri_fusion(L[len(L)//2:])
