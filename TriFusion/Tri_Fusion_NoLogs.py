@@ -32,7 +32,6 @@ def tri_fusion(L):
     n = len(L)
     if(n<=1):
         return L
-    print(L)
     mg,md = mtg(L),mtd(L)
     L1 = tri_fusion(mg)
     L2 = tri_fusion(md)
