@@ -21,16 +21,12 @@ def fusion(L1,L2):
     return L
 
 def mtg(L):
-    x = []
-    for i in range(len(L)//2):
-        x.append(L[i+len(L)//2])
-    return x
+    x = len(L)//2
+    return L[0:x]
 
 def mtd(L):
-    x = []
-    for i in range(len(L)//2):
-        x.append(L[i])
-    return x
+    x = len(L)//2
+    return L[x:]
 
 def tri_fusion(L):
     n = len(L)
