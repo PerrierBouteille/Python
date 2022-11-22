@@ -13,7 +13,7 @@ def fusion(L1,L2):
         L[i] = L1[i1]
         i1 += 1
         i += 1
-    while i2<len(L2): 
+    while i2<len(L2):
         L[i] = L2[i2]
         i2 += 1
         i += 1
@@ -22,6 +22,4 @@ def fusion(L1,L2):
 def tri_fusion(L):
     if(len(L)<=1):
         return L
-    L1 = tri_fusion(L[0:len(L)//2])
-    L2 = tri_fusion(L[len(L)//2:])
-    return fusion(L1,L2)
+    return fusion(tri_fusion(L[0:len(L)//2]),tri_fusion(L[len(L)//2:]))
