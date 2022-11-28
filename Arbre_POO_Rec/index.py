@@ -6,12 +6,12 @@
 
     def racine(self):
         return self.key
+    
     def feuille(self):
         if(self.fg == None and self.fd == None):
             return True
         else:
             return False
-
 
     def hauteur(self):
         if self.feuille() == True:
