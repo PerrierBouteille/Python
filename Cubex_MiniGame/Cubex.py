@@ -1,6 +1,7 @@
-﻿import pygame
+import pygame
 from pygame.locals import *
 from random import *
+from time import *
 
 
 pygame.init()
@@ -38,6 +39,7 @@ tx,ty=0,0
 menu,play=1,0
 over=0
 overc=0
+haut,bas,droite,gauche=0,0,0,0
 
 while True:
     while menu:
@@ -54,17 +56,38 @@ while True:
                 exit()
             if (event.type == KEYDOWN and over==0) :
                 if event.key == K_UP:
-                    pygame.draw.rect(screen, (0,0,0), Rect((nav_x,nav_y),(10+tx,10+ty)))
-                    nav_y -=5
+
+                    haut,bas,droite,gauche=1,0,0,0
                 if event.key == K_DOWN:
-                    pygame.draw.rect(screen, (0,0,0), Rect((nav_x,nav_y),(10+tx,10+ty)))
-                    nav_y += 5
+
+                    haut,bas,droite,gauche=0,1,0,0
                 if event.key == K_LEFT:
-                    pygame.draw.rect(screen, (0,0,0), Rect((nav_x,nav_y),(10+tx,10+ty)))
-                    nav_x -=5
+
+                    haut,bas,droite,gauche=0,0,0,1
                 if event.key == K_RIGHT:
-                    pygame.draw.rect(screen, (0,0,0), Rect((nav_x,nav_y),(10+tx,10+ty)))
-                    nav_x +=5
+
+                    haut,bas,droite,gauche=0,0,1,0
+        if(over==0):
+            if(haut==1):
+                pygame.draw.rect(screen, (0,0,0), Rect((nav_x,nav_y),(10+tx,10+ty)))
+                sleep(0.1)
+                nav_y -=5
+
+            if(bas==1):
+                pygame.draw.rect(screen, (0,0,0), Rect((nav_x,nav_y),(10+tx,10+ty)))
+                sleep(0.1)
+                nav_y += 5
+
+            if(droite==1):
+                pygame.draw.rect(screen, (0,0,0), Rect((nav_x,nav_y),(10+tx,10+ty)))
+                sleep(0.1)
+                nav_x +=5
+
+            if(gauche==1):
+                pygame.draw.rect(screen, (0,0,0), Rect((nav_x,nav_y),(10+tx,10+ty)))
+                sleep(0.1)
+                nav_x -=5
+
         if(minicube == 0):
             minicube = 1
             x = randint(100,300)
