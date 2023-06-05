@@ -103,7 +103,7 @@ print(level)
 class Player(object):
 
     def __init__(self):
-        self.rect = pygame.Rect(32, 32, 16, 16)
+        self.rect = pygame.Rect(32, 32, 8, 8)
 
     def move(self, dx, dy):
 
@@ -207,11 +207,11 @@ while running:
         sys.exit()
 
     # Draw the scene
-    screen.fill((0, 0, 0))
+    screen.fill((145, 145, 145))
     for wall in walls:
-        pygame.draw.rect(screen, (255, 255, 255), wall.rect)
+        pygame.draw.rect(screen, (25, 25, 25), wall.rect)
     pygame.draw.rect(screen, (255, 0, 0), end_rect)
-    pygame.draw.rect(screen, (255, 200, 0), player.rect)
+    pygame.draw.rect(screen, (250, 25, 250), player.rect)
     # gfxdraw.filled_circle(screen, 255, 200, 5, (0,128,0))
     pygame.display.flip()
     clock.tick(360)
