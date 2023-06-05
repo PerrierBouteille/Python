@@ -59,7 +59,7 @@ def fabrique_labyrinthe(largeur, hauteur):
                     # peut à priori pas y aller. On s'autorise tout de
                     # même le passage dans 20% des cas, afin de créer
                     # des boucles dans le labyrinthe.
-                    if random.random() >= 0.8:
+                    if random.random() >= 0.975:
                         directions_possibles.append((dy, dx))
 
         if len(directions_possibles) == 0:
@@ -83,7 +83,7 @@ def fabrique_labyrinthe(largeur, hauteur):
     return laby
 
 
-labyrinthe=fabrique_labyrinthe(21,21)
+labyrinthe=fabrique_labyrinthe(45,45)
 print(labyrinthe)
 
 level=labyrinthe
@@ -143,7 +143,7 @@ pygame.init()
 
 # Set up the display
 pygame.display.set_caption("Labyrinthe 1.0")
-screen = pygame.display.set_mode((640, 480))
+screen = pygame.display.set_mode((1240, 860))
 
 clock = pygame.time.Clock()
 walls = [] # List to hold the walls
